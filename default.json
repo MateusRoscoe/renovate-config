@@ -1,0 +1,21 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Default Renovate configuration for all repositories.",
+  "extends": [
+    "config:recommended",
+    "group:allNonMajor",
+    ":semanticCommits"
+  ],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "dev dependencies",
+      "commitMessagePrefix": "chore(deps):"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "groupName": "production dependencies",
+      "commitMessagePrefix": "fix(deps):"
+    }
+  ]
+}
