@@ -16,29 +16,5 @@
   "lockFileMaintenance": {
     "automerge": true
   },
-  "separateMinorPatch": false,
-  "packageRules": [
-    {
-      "matchDepTypes": ["devDependencies"],
-      "groupName": "dev-dependencies-minor-patch",
-      "group": {
-        "major": { "enabled": false },
-        "minor": { "enabled": true },
-        "patch": { "enabled": true }
-      },
-      "commitMessagePrefix": "chore(deps):",
-      "automerge": true,
-      "automergeType": "pr"
-    },
-    {
-      "matchDepTypes": ["dependencies"],
-      "groupName": "prod-dependencies-minor-patch",
-      "group": {
-        "major": { "enabled": false },
-        "minor": { "enabled": true },
-        "patch": { "enabled": true }
-      },
-      "commitMessagePrefix": "fix(deps):"
-    }
-  ]
+  "separateMinorPatch": false
 }
