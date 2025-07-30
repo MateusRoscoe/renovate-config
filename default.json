@@ -1,20 +1,34 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Default Renovate configuration for all repositories.",
   "extends": [
     "config:recommended",
-    "group:allNonMajor",
     ":semanticCommits"
   ],
+  "group": {
+    "groupName": "no-global-grouping",
+    "packagePatterns": ["^$"]
+  },
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
-      "groupName": "dev dependencies",
-      "commitMessagePrefix": "chore(deps):"
+      "groupName": "dev-dependencies-minor-patch",
+      "group": {
+        "major": { "enabled": false },
+        "minor": { "enabled": true },
+        "patch": { "enabled": true }
+      },
+      "commitMessagePrefix": "chore(deps):",
+      "automerge": true,
+      "automergeType": "pr"
     },
     {
       "matchDepTypes": ["dependencies"],
-      "groupName": "production dependencies",
+      "groupName": "prod-dependencies-minor-patch",
+      "group": {
+        "major": { "enabled": false },
+        "minor": { "enabled": true },
+        "patch": { "enabled": true }
+      },
       "commitMessagePrefix": "fix(deps):"
     }
   ]
