@@ -23,7 +23,8 @@
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "automerge": true,
-      "automergeType": "branch"
+      "automergeType": "branch",
+      "excludePackagePatterns": ["^@types/"]
     }
   ]
 }
