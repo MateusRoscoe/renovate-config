@@ -16,5 +16,14 @@
   "lockFileMaintenance": {
     "automerge": true
   },
-  "separateMinorPatch": false
+  "separateMinorPatch": false,
+  "packageRules": [
+    {
+      "description": "Automatically merge minor and patch-level updates",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ]
 }
